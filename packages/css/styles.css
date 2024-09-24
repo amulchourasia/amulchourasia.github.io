@@ -450,133 +450,116 @@ img {
 
 /*==================== SKILLS ====================*/
 
+/* General Container Styling */
 .skills__container {
-  row-gap: 0;
-}
-
-.skills__header {
+  margin: 0 auto;
+  /* padding: 2rem;
   display: flex;
+  justify-content: center; */
   align-items: center;
-  margin-bottom: var(--mb-2-5);
-  cursor: pointer;
+  flex-direction: column;
 }
 
-.skills__icon,
-.skills__arrow {
-  font-size: 2rem;
-  color: var(--first-color);
+/* Card Styling */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 1200px;
+  width: 100%;
 }
 
-.skills__icon {
-  margin-right: var(--mb-0-75);
+.card-content {
+  padding: 1rem;
+  text-align: center;
 }
 
+/* Title Styling */
 .skills__title {
-  font-size: var(--h3-font-size);
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #8d6e63; /* Brown text */
 }
 
-.skills__subtitle {
-  font-size: var(--small-font-size);
-  color: var(--text-color-light);
+/* Grid Layout for Skills */
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
 }
 
-.skills__arrow {
-  margin-left: auto;
-  transition: 0.4s;
-}
-
-.skills__list {
-  row-gap: 1.5rem;
-  padding-left: 2.7rem;
-}
-
-.skills__titles {
+/* Individual Skill Item */
+.skills__item {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: var(--mb-0-5);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.skills__name {
-  font-size: var(--normal-font-size);
-  font-weight: var(--font-medium);
+.skills__img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  border: 2px solid #f5f5f5;
+  object-fit: cover;
 }
 
-.skills__bar,
-.skills__percentage {
-  height: 5px;
-  border-radius: 0.25rem;
+/* Text Styling for Skill Names */
+.skills__item span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
 }
 
-.skills__bar {
-  background-color: var(--first-color-lighter);
+/* Media Queries for Smaller Screens */
+@media screen and (max-width: 768px) {
+  .skills__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-.skills__percentage {
-  display: block;
-  background-color: var(--first-color);
+@media screen and (max-width: 480px) {
+  .skills__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills__title {
+    font-size: 1.5rem;
+  }
+
+  .skills__img {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media screen and (max-width: 283px) {
+  .services__container {
+    width: auto; /* Prevent container from reducing */
+    padding: 0 10px; /* Optional: add some padding */
+  }
+  
+  .card {
+    display: flex; /* Use flex to keep images in two columns */
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: space-between; /* Adjust spacing */
+  }
+  
+  .card-content {
+    flex: 0 1 48%; /* Set each item to take up approximately half the width */
+    margin-bottom: 10px; /* Optional: space between items */
+  }
+  
+  .responsive-img {
+    max-width: 100%; /* Ensure images do not overflow their container */
+    height: auto; /* Maintain aspect ratio */
+  }
 }
 
-.skills__html {
-  width: 90%;
-}
-
-.skills__css {
-  width: 80%;
-}
-
-.skills__js {
-  width: 60%;
-}
-
-.skills__wordpress {
-  width: 70%;
-}
-
-.skills__python {
-  width: 60%;
-}
-
-.skills__tab {
-  width: 70%;
-}
-
-.skills__sql {
-  width: 50%;
-}
-
-.skills__google {
-  width: 70%;
-}
-
-.skills__bank {
-  width: 80%;
-}
-
-.skills__google {
-  width: 70%;
-}
-
-.skills__counter {
-  width: 80%;
-}
-
-.skills__office {
-  width: 90%;
-}
-
-.skills__close .skills__list {
-  height: 0;
-  overflow: hidden;
-}
-
-.skills__open .skills__list {
-  height: max-content;
-  margin-bottom: var(--mb-2-5);
-}
-
-.skills__open .skills__arrow {
-  transform: rotate(-180deg);
-}
 
 /*==================== QUALIFICATION ====================*/
 .qualification__tabs {
@@ -755,64 +738,155 @@ img {
 }
 
 /*==================== PORTFOLIO ====================*/
-.portfolio__container {
-  overflow: initial;
+/* Projects Section Styles */
+.projects {
+  padding: 2rem 0;
 }
 
-.portfolio__content {
-  padding: 0 1.5rem;
+.projects__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 
-.portfolio__img {
-  width: 265px;
-  border-radius: 0.5rem;
-  justify-self: center;
+.projects__content {
+  position: relative;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.portfolio__title {
-  font-size: var(--h3-font-size);
-  margin-bottom: var(--mb-0-5);
+.projects__title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  text-align: center;
 }
 
-.portfolio__description {
-  margin-bottom: var(--mb-0-75);
+.projects__subtitle {
+  font-size: 0.875rem;
+  color: #999;
+  text-align: center;
 }
 
-.portfolio__button:hover .button__icon {
-  transform: translateX(0.25rem);
+.projects__button {
+  margin-top: 1rem;
+  cursor: pointer;
 }
 
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  content: "";
+.projects__button:hover {
+  color: #333;
 }
 
-.swiper-portfolio-icon {
-  font-size: 2rem;
-  color: var(--first-color);
+.projects__modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
 }
 
-.swiper-button-prev {
-  left: -0.5rem;
+.projects__modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 500px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
-.swiper-button-next {
-  right: -0.5rem;
+.projects__modal-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.swiper-container-horizontal > .swiper-pagination-bullets {
-  bottom: -2.5rem;
+.projects__modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-.swiper-pagination-bullet-active {
-  background-color: var(--first-color);
+.projects__modal-services {
+  list-style: none;
+  padding: 0;
 }
 
-.swiper-button-prev,
-.swiper-button-next,
-.swiper-pagination-bullet {
-  outline: none;
+.projects__modal-service {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
 }
+
+.projects__modal-icon {
+  color: #4CAF50;
+  margin-right: 0.5rem;
+}
+.projects__content {
+  display: flex;                   /* Use flexbox to align items */
+  flex-direction: column;         /* Stack items vertically */
+  align-items: center;            /* Center items horizontally */
+}
+
+.projects__content div {
+  display: flex;                  /* Enable flexbox for the inner div */
+  flex-direction: column;         /* Stack inner content vertically */
+  align-items: center;            /* Center align content */
+}
+
+.projects__content img {
+  width: 100px;                  /* Set a fixed width for consistency */
+  height: 100px;                 /* Set a fixed height to match width */
+  object-fit: cover;             /* Ensure images cover the area without distortion */
+  border-radius: 0.5rem;         /* Optional: add rounded corners */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects__container {
+    grid-template-columns: 1fr;
+  }
+
+  .projects__modal-content {
+    width: 90%;
+    max-height: 70vh;
+  }
+}
+
+/* Ensure the background container stops reducing below 283px */
+@media (max-width: 283px) {
+  .projects__container {
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    min-width: 283px;
+  }
+
+  .projects__modal-content {
+    width: 100%;
+    max-height: 70vh;
+  }
+}
+/* Zoom-in effect for the iframe */
+.projects__content iframe {
+  width: 100%;  /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.projects__content:hover iframe {
+  transform: scale(1.1); /* Zoom in on hover */
+}
+
 /*==================== PROJECT IN MIND ====================*/
 .project {
   text-align: center;
@@ -1077,16 +1151,46 @@ img {
   }
 
   .services__container {
-    grid-template-columns: max-content;
+    /* grid-template-columns: max-content;
     justify-content: center;
+    width:min-content; */
+    grid-template-columns: 1fr; /* Makes sure the cards take the full width of the screen */
+    justify-content: center;
+    /* width: 100%; Ensures that the container takes up the full width of the screen */
+    padding: 0 10px; /* Adds padding to prevent content from touching the edges */
+  
   }
 
   .services__content {
     padding-right: 3.5rem;
   }
-  .services__modal {
+  /* .services__modal {
     padding: 0 0.5rem;
+  } */
+  .services__modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Keep the modal in a fixed position */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full screen width */
+    height: 100vh; /* Full screen height */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 999; /* Ensure modal is on top */
   }
+  .services__modal-content {
+    background-color: white;
+    width: 90%; /* Occupies most of the screen width */
+    max-height: 80vh; /* Limits modal height to 80% of the viewport */
+    overflow-y: auto; /* Adds vertical scroll if content is too long */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
 
   .project__img {
     width: 200px;
