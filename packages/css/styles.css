@@ -215,6 +215,7 @@ img {
 
 @media screen and (max-width: 767px) {
   .nav__menu {
+    display: none;
     position: fixed;
     bottom: -100%;
     left: 0;
@@ -223,9 +224,12 @@ img {
     padding: 2rem 1.5rem 4rem;
     box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
     border-radius: 1.5rem 1.5rem 0 0;
-    transition: 0.3s;
+    transition: transform 0.3s ease; /* Ensure transition works on smaller screens */
+
   }
 }
+
+
 
 .nav__list {
   grid-template-columns: repeat(3, 1fr);
@@ -959,8 +963,24 @@ img {
 
 /*==================== CONTACT ME ====================*/
 .contact__container {
-  row-gap: 3rem;
+  display: flex; /* Enables flexbox layout */
+  flex-direction: column; /* Stacks children vertically */
+  align-items: center; /* Centers items horizontally */
+  justify-content: center; /* Centers items vertically */
+  height: 100%; /* Ensures it takes the full height of the parent */
 }
+
+.contact__information {
+  display: flex; /* Enables flexbox for each contact info item */
+  align-items: center; /* Vertically centers the icon and text */
+  margin: 1rem 0; /* Adds space between items */
+}
+
+.contact__icon {
+  font-size: 2rem; /* Adjust icon size as needed */
+  margin-right: 1rem; /* Space between icon and text */
+}
+
 
 .contact__information {
   display: flex;
@@ -1232,7 +1252,7 @@ img {
   .skills_container,
   .portfolio__content,
   .project__container,
-  .contact__container,
+  /* .contact__container, */
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1556,4 +1576,62 @@ img {
     justify-content: center; /* Center align the button for small screens */
   }
 }
+/* skills dark theme */
+body.dark-theme .card {
+  background-color: var(--container-color);
+  color: var(--title-color);
+}
 
+body.dark-theme .skills__title {
+  color: var(--text-color);
+}
+
+body.dark-theme .skills__item span {
+  color: var(--text-color);
+}
+
+body.dark-theme .skills__img {
+  border-color: var(--input-color);
+}
+/* project dark theme */
+/* Dark theme styles for project cards */
+body.dark-theme .projects__content {
+  background-color: var(--container-color);
+  color: var(--title-color);
+}
+
+/* Title and subtitle adjustments */
+body.dark-theme .projects__title {
+  color: var(--text-color);
+}
+
+body.dark-theme .projects__subtitle {
+  color: var(--text-color-light);
+}
+
+/* Adjustments for images and buttons */
+body.dark-theme .projects__img {
+  border-color: var(--input-color);
+}
+
+body.dark-theme .button--link {
+  color: var(--first-color);
+}
+
+body.dark-theme .button--link:hover {
+  color: var(--first-color-alt);
+}
+
+/* Dark theme styles for Ongoing Projects */
+body.dark-theme .ongoing__content {
+  background-color: var(--container-color);
+  color: var(--title-color);
+}
+
+body.dark-theme .ongoing__title {
+  color: var(--text-color);
+}
+
+body.dark-theme .ongoing__subtitle {
+  color: var(--text-color-light);
+}
