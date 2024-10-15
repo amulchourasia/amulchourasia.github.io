@@ -1635,3 +1635,29 @@ body.dark-theme .ongoing__title {
 body.dark-theme .ongoing__subtitle {
   color: var(--text-color-light);
 }
+.certificate__container {
+  display: grid;
+  /* grid-template-columns: repeat(2, 1fr);
+  gap: 2rem; */
+}
+@media (max-width: 768px) {
+  .certificate__container {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* Ensure the background container stops reducing below 283px */
+@media (max-width: 283px) {
+  .certificate__container {
+    grid-template-columns: 1fr;
+  }
+
+}
+.certificate__container {
+  position: relative;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
